@@ -16,8 +16,8 @@ pub mod escrow {
     use super::*;
 
     pub fn initialize_payment(
-        ctx: Context<InitializePayment>, 
-        payment_index: u64, 
+        ctx: Context<InitializePayment>,
+        payment_index: u64,
         condition_content: String,
         amount: u64,
     ) -> Result<()> {
@@ -25,7 +25,7 @@ pub mod escrow {
             ctx,
             payment_index,
             condition_content,
-            amount,
+            amount
         )
     }
 
@@ -33,9 +33,6 @@ pub mod escrow {
         ctx: Context<FinalizePayment>,
         payment_index: u64,
     ) -> Result<()> {
-        finalize_payment::handler(
-            ctx,
-            payment_index,
-        )
+        finalize_payment::handler(ctx, payment_index)
     }
 }
